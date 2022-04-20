@@ -23,32 +23,32 @@ function App() {
   );
 }
 
-function LambdaDemo(){
-const[loading, setLoading]=useState(false)
-const[msg, setMsg]=useState('')
+// function LambdaDemo(){
+// const[loading, setLoading]=useState(false)
+// const[msg, setMsg]=useState('')
 
 
- const handleClick = (api:string) => (e:any) => {
-    e.preventDefault()
+//  const handleClick = (api:string) => (e:any) => {
+//     e.preventDefault()
 
-    setLoading(true)
-    fetch("http://localhost:9000/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => {
-        setLoading(false)
-        setMsg(json.msg)
-      })
-  }
+//     setLoading(true)
+//     fetch("http://localhost:9000/.netlify/functions/" + api)
+//       .then(response => response.json())
+//       .then(json => {
+//         setLoading(false)
+//         setMsg(json.msg)
+//       })
+//   }
 
 
-    return (
-      <p>
-        <button onClick={handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
+//     return (
+//       <p>
+//         <button onClick={handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
+//         <button onClick={handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
+//         <br />
+//         <span>{msg}</span>
+//       </p>
+//     )
   
-}
+// }
 export default App;
