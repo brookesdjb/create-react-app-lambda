@@ -1,13 +1,14 @@
 import * as React from 'react';
 
 import Button from '@mui/material/Button';
-import { TextField, Stack, FormGroup } from '@mui/material';
+import { TextField, Stack, FormGroup, Box } from '@mui/material';
 
 export default function Support() {
-    return (<div>
+    return (<Box paddingX={10}>
         <Stack spacing={2}>
             <h2>Support</h2>
-
+      
+           Please let us know if you are having any problems with the app, we will be in touch as soon as possible to help resolve your problem. 
             <form name="contact" method="post">
                 <input type="hidden" name="form-name" value="contact" />
 
@@ -25,5 +26,5 @@ export default function Support() {
             </form>
 
         </Stack>
-    </div>)
+    </Box>)
 }
