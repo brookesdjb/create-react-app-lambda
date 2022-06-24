@@ -1,28 +1,60 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Support from './pages/support';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 function App() {
   return (
+    <ThemeProvider theme={darkTheme}>
+
     <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="support" element={<Support />} />
+
+      </Routes>
+    </div>
+    </ThemeProvider>
+
+  );
+}
+
+function Home(){
+  return (
+    <div className="Home">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
          Coming Soon...
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
+     
+        <Link to="/about">About</Link>
+        <Link to="/support">Support</Link>
+
 
       </header>
+     
     </div>
   );
 }
-
+function About(){
+  return (<div>
+    About page
+  </div>)
+}
 // function LambdaDemo(){
 // const[loading, setLoading]=useState(false)
 // const[msg, setMsg]=useState('')
